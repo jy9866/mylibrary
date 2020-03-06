@@ -5,6 +5,7 @@
 <head>
     <!--title-->
     <title>Web Library Management System - @yield('title')</title>
+    <link rel="icon" href="/images/library.png" sizes="30x30"/>
     <!-- bootstrap CSS  -->
     @include('includes.stylesheets')
 </head>

@@ -8,6 +8,7 @@
                    <hr>
 
                     <p></p>
+                    <img class="d-block w-100" src="/images/banner.png" >
 
 
 @endsection
