@@ -14,8 +14,15 @@ class CreateJournalsTable extends Migration
     public function up()
     {
         Schema::create('journals', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+          $table->engine='InnoDB';
+          $table->increments('id');
+          $table->string('title', 150);
+          $table->string('author', 150);
+          $table->string('publisher', 100);
+          $table->string('category', 100);
+          $table->string('status', 20);
+          $table->rememberToken();
+          $table->timestamps();
         });
     }
 

@@ -14,7 +14,15 @@ class CreateBooksTable extends Migration
     public function up()
     {
         Schema::create('books', function (Blueprint $table) {
+            $table->engine='InnoDB';
             $table->increments('id');
+            $table->string('title', 150);
+            $table->string('author', 150);
+            $table->string('publisher', 100);
+            $table->string('category', 100);
+            $table->string('status', 20);
+            $table->binary('image')->nullable();
+            $table->rememberToken();
             $table->timestamps();
         });
     }
