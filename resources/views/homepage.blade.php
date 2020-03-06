@@ -1,14 +1,19 @@
+<style>
+
+
+</style>
 @extends('layout.front')
 
 @section('title','HomePage')
 
+
 @section('content')
-                   <h1>About Us</h1>
+<img src="/images/banner.png" alt = "Banner" height ="450" width="100%">
 
-                   <hr>
+  <h1>About Us</h1>
 
-                    <p></p>
-                    <img class="d-block w-100" src="/images/banner.png" >
+
+
 
 
 @endsection
