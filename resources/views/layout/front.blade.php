@@ -5,20 +5,21 @@
 <head>
     <!--title-->
     <title>Web Library Management System - @yield('title')</title>
-    <link rel="icon" href="/images/library.png" sizes="30x30"/>
+    <link rel="icon" href="/images/icon.png" sizes="30x30"/>
     <!-- bootstrap CSS  -->
     @include('includes.stylesheets')
+    @include('includes.headnavbar')
+    <img src="/images/banner.png" alt = "Banner" height ="450" width="100%">
 </head>
 
 
 <body>
     <!--navbar-->
-
-    <br>
-    <br>
+    @include('includes.navbar')
     <!--content-->
     <div>
      @yield('content')
+
     </div>
 
     <!-- Scripts -->
