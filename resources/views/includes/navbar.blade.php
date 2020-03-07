@@ -5,32 +5,25 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-    <ul class="navbar-nav mr-auto mt-4 mt-lg-0">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
         <a class="nav-link" href="/"><i class="fa fa-fw fa-home"></i>Home<span class="sr-only">(current)</span></a>
       </li>
-</li>
     <li class="nav-item">
       <a class="nav-link" href="AboutUs"><i class="fa fa-fw fa-users"></i>About Us</a>
     </li>
-
-</li>
-      <li class="nav-item">
-        <a class="nav-link" href="Book"><i class="fa fa-fw fa-book"></i>Book</a>
-      </li>
-
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="Journal"><i class="fa fa-fw fa-book"></i>Journal</a>
-    </li>
-
-
-  </li>
+    <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           <i class="fa fa-fw fa-suitcase"></i>Resources</a>
+           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+             <a class="dropdown-item" href="gFloorLevel"><i class="fa fa-fw fa-book"></i>Book</a>
+             <a class="dropdown-item" href="firstFloorLevel"><i class="fa fa-fw fa-file-text"></i>Journal</a>
+           </div>
+         </li>
   <li class="nav-item">
     <a class="nav-link" href="Facilities"><i class="fa fa-fw fa-institution"></i>Facilities</a>
   </li>
 
-</li>
 <li class="nav-item">
   <a class="nav-link" href="ContactUs"><i class="fa fa-fw fa-envelope"></i>Contact Us</a>
 </li>

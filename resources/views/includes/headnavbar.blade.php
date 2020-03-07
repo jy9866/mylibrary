@@ -13,7 +13,7 @@
     <!--Login and Register at right side of nav bar-->
     <ul class="navbar-nav mt-9 mt-lg-0">
       <li class="nav-item">
-       <a class="nav-link" href="{{ url('/login') }}"><i class="fa fa-fw fa-user-circle"></i>Login</a>
+       <a class="nav-link" href="{{ url('/login') }}"><i class="fa fa-fw fa-user-circle-o"></i>Login</a>
 
        </li>
       <li class="nav-item">
