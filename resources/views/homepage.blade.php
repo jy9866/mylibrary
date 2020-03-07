@@ -31,6 +31,7 @@ border: 1px solid black;
 .column.middle {
   width: 50%;
 
+<<<<<<< HEAD
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
@@ -44,6 +45,23 @@ border: 1px solid black;
   display: table;
   clear: both;
 }
+=======
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+  .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+}
+
+>>>>>>> 829d29868b014162f4f16c3ae9cd5b6cf03495a9
 
 </style>
 
