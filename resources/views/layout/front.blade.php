@@ -9,7 +9,7 @@
     <!-- bootstrap CSS  -->
     @include('includes.stylesheets')
     @include('includes.headnavbar')
-    <img src="/images/banner.png" alt = "Banner" height ="450" width="100%">
+    <img src="/images/banner.png" alt = "Banner" height ="350" width="100%">
 </head>
 
 
