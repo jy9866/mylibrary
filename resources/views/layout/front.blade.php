@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<style>
+.colour
+{
+	background-color: #E6E6FA;
+}
+</style>
 
 <html lang="{{ app()->getLocale() }}">
 
@@ -17,7 +23,7 @@
     <!--navbar-->
     @include('includes.navbar')
     <!--content-->
-    <div>
+    <div class = "colour">
      @yield('content')
 
     </div>
