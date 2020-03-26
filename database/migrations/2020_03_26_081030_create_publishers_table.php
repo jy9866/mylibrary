@@ -14,6 +14,7 @@ class CreatePublishersTable extends Migration
     public function up()
     {
         Schema::create('publishers', function (Blueprint $table) {
+            $table->engine='InnoDB';
             $table->increments('id');
             $table->string('name', 150);
             $table->string('address', 150);

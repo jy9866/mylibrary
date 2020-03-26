@@ -24,9 +24,9 @@ class CreateBooksTable extends Migration
             $table->unsignedInteger('publisher_name');
 
             $table->foreign('author_name')
-                  ->references('name')->on('author');
+                  ->references('name')->on('authors');
             $table->foreign('publisher_name')
-                  ->references('name')->on('publisher');
+                  ->references('name')->on('publishers');
             $table->rememberToken();
             $table->timestamps();
         });
