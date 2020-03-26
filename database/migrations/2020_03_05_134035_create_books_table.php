@@ -13,6 +13,8 @@ class CreateBooksTable extends Migration
      */
     public function up()
     {
+        Schema::enableForeignKeyConstraints();
+
         Schema::create('books', function (Blueprint $table) {
             $table->engine='InnoDB';
             $table->increments('id');
@@ -27,9 +29,10 @@ class CreateBooksTable extends Migration
                   ->references('name')->on('authors');
             $table->foreign('publisherName')
                   ->references('name')->on('publishers');
-            $table->rememberToken();
             $table->timestamps();
         });
+
+        Schema::dropIfExists('books');
     }
 
     /**

@@ -13,6 +13,8 @@ class CreateAuthorsTable extends Migration
      */
     public function up()
     {
+        Schema::enableForeignKeyConstraints();
+
         Schema::create('authors', function (Blueprint $table) {
             $table->engine='InnoDB';
             $table->increments('id');
@@ -20,9 +22,9 @@ class CreateAuthorsTable extends Migration
             $table->string('name', 150);
             $table->string('address', 150);
             $table->string('email', 50);
-            $table->rememberToken();
             $table->timestamps();
         });
+        Schema::dropIfExists('authors');
     }
 
     /**

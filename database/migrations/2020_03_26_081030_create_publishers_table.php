@@ -13,16 +13,19 @@ class CreatePublishersTable extends Migration
      */
     public function up()
     {
+        Schema::enableForeignKeyConstraints();
+
         Schema::create('publishers', function (Blueprint $table) {
             $table->engine='InnoDB';
             $table->increments('id');
             $table->string('name', 150);
             $table->string('address', 150);
-            $table->string('year', 4);
-            $table->string('edition', 2);
+            $table->integer('year', 4);
+            $table->integer('edition', 2);
             $table->string('email', 50);
             $table->timestamps();
         });
+        Schema::dropIfExists('publishers');
     }
 
     /**
