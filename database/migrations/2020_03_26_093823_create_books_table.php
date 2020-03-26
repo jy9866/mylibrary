@@ -31,10 +31,9 @@ class CreateBooksTable extends Migration
                    ->references('id')->on('publishers');
              $table->timestamps();
          });
-
-
-    public function down()
-    {
-        Schema::dropIfExists('books');
-    }
+      }
+      public function down()
+      {
+          Schema::dropIfExists('books');
+      }
 }
