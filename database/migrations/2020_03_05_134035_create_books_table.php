@@ -23,8 +23,8 @@ class CreateBooksTable extends Migration
             $table->string('title', 150);
             $table->string('category', 100);
             $table->string('status', 20);
-            $table->unsignedInteger('author_id');
-            $table->unsignedInteger('publisher_id');
+            $table->unsignedInteger('author_id')->nullable();
+            $table->unsignedInteger('publisher_id')->nullable();
 
             $table->foreign('author_id')
                   ->references('id')->on('authors');
