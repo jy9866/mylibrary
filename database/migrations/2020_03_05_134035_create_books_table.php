@@ -20,10 +20,10 @@ class CreateBooksTable extends Migration
             $table->string('title', 150);
             $table->string('category', 100);
             $table->string('status', 20);
-            $table->foreign(’author_name’)
-                  ->references(’name’)->on(’author’);
-            $table->foreign(’publisher_name’)
-                  ->references(’name’)->on(’publisher’);
+            $table->foreign('author_name')
+                  ->references('name')->on('author');
+            $table->foreign('publisher_name')
+                  ->references('name')->on('publisher');
             $table->rememberToken();
             $table->timestamps();
         });
