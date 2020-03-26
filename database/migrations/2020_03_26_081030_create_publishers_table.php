@@ -21,7 +21,7 @@ class CreatePublishersTable extends Migration
             $table->increments('id');
             $table->string('name', 150);
             $table->string('address', 150);
-            $table->integer('year')->length(4);
+            $table->year('year');
             $table->integer('edition')->length(2);
             $table->string('email', 50);
             $table->timestamps();
