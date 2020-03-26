@@ -16,12 +16,14 @@ class CreateBooksTable extends Migration
         Schema::create('books', function (Blueprint $table) {
             $table->engine='InnoDB';
             $table->increments('id');
+            $table->binary('image')->nullable();
             $table->string('title', 150);
-            $table->string('author', 150);
-            $table->string('publisher', 100);
             $table->string('category', 100);
             $table->string('status', 20);
-            $table->binary('image')->nullable();
+            $table->foreign(’author_name’)
+                  ->references(’name’)->on(’authors’);
+            $table->foreign(’publisher_name’)
+                  ->references(’name’)->on(’publishers’);
             $table->rememberToken();
             $table->timestamps();
         });

@@ -15,10 +15,10 @@ class CreateAuthorsTable extends Migration
     {
         Schema::create('authors', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 150);
             $table->binary('image')->nullable();
-            $table->foreign(’books_id’)
-                  ->references(’id’)->on(’books’);
+            $table->string('name', 150);
+            $table->string('address', 150);
+            $table->string('email', 50);
             $table->rememberToken();
             $table->timestamps();
         });
