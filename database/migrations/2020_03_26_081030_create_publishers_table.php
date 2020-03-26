@@ -14,7 +14,7 @@ class CreatePublishersTable extends Migration
     public function up()
     {
         Schema::enableForeignKeyConstraints();
-        Schema::dropIfExists('publishers');
+
 
         Schema::create('publishers', function (Blueprint $table) {
             $table->engine='InnoDB';
