@@ -23,13 +23,13 @@ class CreateBooksTable extends Migration
             $table->string('title', 150);
             $table->string('category', 100);
             $table->string('status', 20);
-            $table->unsignedString('authorName')->nullable();
-            $table->unsignedString('publisherName')->nullable();
+            $table->unsignedInteger('author_id');
+            $table->unsignedInteger('publisher_id');
 
-            $table->foreign('authorName')
-                  ->references('name')->on('authors');
-            $table->foreign('publisherName')
-                  ->references('name')->on('publishers');
+            $table->foreign('author_id')
+                  ->references('id')->on('authors');
+            $table->foreign('publisher_id')
+                  ->references('id')->on('publishers');
             $table->timestamps();
         });
 
