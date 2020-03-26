@@ -14,6 +14,7 @@ class CreateBooksTable extends Migration
     public function up()
     {
         Schema::enableForeignKeyConstraints();
+        Schema::dropIfExists('books');
 
         Schema::create('books', function (Blueprint $table) {
             $table->engine='InnoDB';
@@ -22,8 +23,8 @@ class CreateBooksTable extends Migration
             $table->string('title', 150);
             $table->string('category', 100);
             $table->string('status', 20);
-            $table->unsignedInteger('authorName')->nullable();
-            $table->unsignedInteger('publisherName')->nullable();
+            $table->unsignedString('authorName')->nullable();
+            $table->unsignedString('publisherName')->nullable();
 
             $table->foreign('authorName')
                   ->references('name')->on('authors');
@@ -32,7 +33,7 @@ class CreateBooksTable extends Migration
             $table->timestamps();
         });
 
-        Schema::dropIfExists('books');
+
     }
 
     /**

@@ -14,6 +14,7 @@ class CreateAuthorsTable extends Migration
     public function up()
     {
         Schema::enableForeignKeyConstraints();
+        Schema::dropIfExists('authors');
 
         Schema::create('authors', function (Blueprint $table) {
             $table->engine='InnoDB';
@@ -24,7 +25,7 @@ class CreateAuthorsTable extends Migration
             $table->string('email', 50);
             $table->timestamps();
         });
-        Schema::dropIfExists('authors');
+
     }
 
     /**
