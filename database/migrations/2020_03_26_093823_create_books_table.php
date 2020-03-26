@@ -14,7 +14,6 @@ class CreateBooksTable extends Migration
      public function up()
      {
          Schema::enableForeignKeyConstraints();
-         Schema::dropIfExists('books');
 
          Schema::create('books', function (Blueprint $table) {
              $table->engine='InnoDB';

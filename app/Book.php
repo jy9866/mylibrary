@@ -13,13 +13,13 @@ class Book extends Model
 /**
 * one author can have many books
 */
-public function authors()
-{
-  return $this->hasMany(Author::class);
-}
+  public function authors()
+  {
+    return $this->hasMany(Author::class);
+  }
 
-public function publishers()
-{
-  return $this->hasMany(Publisher::class);
-}
+  public function publishers()
+  {
+    return $this->hasMany(Publisher::class);
+  }
 }
