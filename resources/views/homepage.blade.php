@@ -73,6 +73,8 @@ td{
 					<label class="label" for="guidedField_1"><font color="#001177"> Title</font></label>
 					<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_2" value="AU">
 					<label class="label" for="guidedField_2"><font color="#001177"> Author</font></label>
+					<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_2" value="PU">
+					<label class="label" for="guidedField_2"><font color="#001177"> Publisher</font></label>
 				</div>
 		   </div>
 	 </form>

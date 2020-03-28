@@ -11,5 +11,10 @@
 |
 */
 
-//home
+//
 Route::get('/', 'HomeController@getHome');
+Route::get('/aboutus','HomeController@getaboutusintro');
+Route::get('/aboutusvision','HomeController@getaboutusvisionmission');
+Route::get('/aboutusservice','HomeController@getaboutusservices');
+Route::get('/aboutuscontactus','HomeController@getaboutcontactus');
+Auth::routes();

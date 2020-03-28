@@ -1,11 +1,4 @@
 <!DOCTYPE html>
-<style>
-.colour
-{
-	background-color: #E6E6FA;
-}
-</style>
-
 <html lang="{{ app()->getLocale() }}">
 
 <head>
@@ -19,21 +12,20 @@
 </head>
 
 
-<body>
+<body style="background-color: #E6E6FA;">
+
     <!--navbar-->
     @include('includes.navbar')
     <!--content-->
-    <div class = "colour">
-     @yield('content')
 
-    </div>
+     @yield('content')
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 
     <!--js/bootstrap-->
     @include('includes.jscripts')
-
+</div>
 </body>
 
     <!--Back to top button-->
@@ -42,5 +34,5 @@
 
 <footer>
     @include('includes.footer')
-    </footer>
+</footer>
 </html>
