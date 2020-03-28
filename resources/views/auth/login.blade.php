@@ -1,4 +1,8 @@
 @extends('layout.app')
+<<<<<<< HEAD
+=======
+@extends('function')
+>>>>>>> d649703ea77fa728518c8a89ef01abfbf117fad7
 
 @section('content')
 <div class="container">
@@ -39,7 +43,11 @@
                             </div>
                         </div>
 
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> d649703ea77fa728518c8a89ef01abfbf117fad7
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
@@ -53,7 +61,11 @@
 
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
+<<<<<<< HEAD
                                 <button type="submit" class="btn btn-primary" >
+=======
+                                <button type="submit" class="btn btn-primary" name="login_btn" >
+>>>>>>> d649703ea77fa728518c8a89ef01abfbf117fad7
                                   Login
                                 </button>
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
