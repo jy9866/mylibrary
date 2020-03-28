@@ -10,14 +10,14 @@
         <a class="nav-link" href="/"><i class="fa fa-fw fa-home"></i>Home<span class="sr-only">(current)</span></a>
       </li>
     <li class="nav-item">
-      <a class="nav-link" href="AboutUs"><i class="fa fa-fw fa-users"></i>About Us</a>
+      <a class="nav-link" href="/aboutus"><i class="fa fa-fw fa-users"></i>About Us</a>
     </li>
     <li class="nav-item dropdown">
            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
            <i class="fa fa-fw fa-suitcase"></i>Resources</a>
            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-             <a class="dropdown-item" href="gFloorLevel"><i class="fa fa-fw fa-book"></i>Book</a>
-             <a class="dropdown-item" href="firstFloorLevel"><i class="fa fa-fw fa-file-text"></i>Journal</a>
+             <a class="dropdown-item" href="Book"><i class="fa fa-fw fa-book"></i>Book</a>
+             <a class="dropdown-item" href="Journal"><i class="fa fa-fw fa-file-text"></i>Journal</a>
            </div>
          </li>
   <li class="nav-item">
