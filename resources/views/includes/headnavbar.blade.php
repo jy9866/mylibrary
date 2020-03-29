@@ -14,11 +14,14 @@
     <ul class="navbar-nav mt-9 mt-lg-0">
       <li class="nav-item">
        <a class="nav-link" href="{{ url('/login') }}"><i class="fa fa-fw fa-user-circle-o"></i>Login</a>
-
        </li>
       <li class="nav-item">
        <a class="nav-link" href="{{ url('/register') }}"><i class="fa fa-fw fa-pencil-square-o"></i>Register</a>
       </li>
+      <li class="nav-item">
+       <a class="nav-link" href="/logout"><i class="fa fa-fw fa-sign-out"></i>Logout</a>
+      </li>
+
     </ul>
 
 </nav>
