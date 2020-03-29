@@ -25,4 +25,8 @@ class HomeController extends Controller
   public function getaboutcontactus(){
     return view('/aboutus/contactus');
   }
+
+  public function getFacilities(){
+    return view('facilities');
+  }
 }

@@ -15,7 +15,6 @@ class CreateAuthorsTable extends Migration
     {
         Schema::enableForeignKeyConstraints();
         Schema::dropIfExists('authors');
-
         Schema::create('authors', function (Blueprint $table) {
             $table->engine='InnoDB';
             $table->increments('id');
