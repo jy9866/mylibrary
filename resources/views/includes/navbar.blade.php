@@ -26,7 +26,7 @@
   </li>
 
 <li class="nav-item">
-  <a class="nav-link" href="ContactUs"><i class="fa fa-fw fa-envelope"></i>Contact Us</a>
+  <a class="nav-link" href="/contactus"><i class="fa fa-fw fa-envelope"></i>Contact Us</a>
 </li>
 </ul>
 
