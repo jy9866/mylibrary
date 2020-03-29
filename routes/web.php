@@ -17,4 +17,6 @@ Route::get('/aboutus','HomeController@getaboutusintro');
 Route::get('/aboutusvision','HomeController@getaboutusvisionmission');
 Route::get('/aboutusservice','HomeController@getaboutusservices');
 Route::get('/aboutuscontactus','HomeController@getaboutcontactus');
+Route::get('/facilities', 'HomeController@getFacilities');
+Route::post('/logout', 'AuthController@logout');
 Auth::routes();
