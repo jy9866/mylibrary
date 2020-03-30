@@ -22,7 +22,7 @@ class CreateBooksTable extends Migration
              $table->string('title', 150);
              $table->string('category', 100);
              $table->string('status', 20);
-             $table->integer('edition')->length(2);
+             $table->integer('edition')->length(2)->nullable();
              $table->year('year');
              $table->unsignedInteger('author_id')->nullable($value = false);
              $table->unsignedInteger('publisher_id')->nullable($value = false);
