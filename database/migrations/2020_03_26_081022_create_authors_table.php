@@ -18,10 +18,7 @@ class CreateAuthorsTable extends Migration
         Schema::create('authors', function (Blueprint $table) {
             $table->engine='InnoDB';
             $table->increments('id');
-            $table->binary('image')->nullable();
             $table->string('name', 150);
-            $table->string('address', 150);
-            $table->string('email', 50);
             $table->timestamps();
         });
 
