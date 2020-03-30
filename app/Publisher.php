@@ -12,7 +12,7 @@ class Publisher extends Model
    * @var array
    */
   protected $fillable = [
-      'name',
+      'name','address', 'email',
   ];
 
   public function books()
