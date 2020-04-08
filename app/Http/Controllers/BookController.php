@@ -11,6 +11,8 @@ use App\Http\Resources\BookResource;
 use Illuminate\Http\Request;
 use Illuminate\Database\QueryException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Facades\Gate;
+
 
 class BookController extends Controller
 {
@@ -113,11 +115,21 @@ class BookController extends Controller
 
 
 		return redirect()->route('/bookindex');
-    }
+	}
+	
+	public function destroy($id){
+		$book = Book::find($id);
+        $book->delete(); 
+		return redirect()->route('book.index')->with(['message'=> 'Books Successfully deleted!!']);
+
+	}
 
     public function adminbookindex(){
-      $books = Book::orderBy('title','category','asc')->get();
-      return view('/admin/book/index',['books' => $books]);
-    }
+		if (Gate::allows('admin-only',auth()->user())) {
 
+      $books = Book::orderBy('title','category','asc')->get();
+	  return view('/admin/book/index',['books' => $books]);
+    	}
+		return redirect('/');
+	}
 }
