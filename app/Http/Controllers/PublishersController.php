@@ -1,4 +1,5 @@
 <?php
+namespace App\Http\Controllers;
 
 use App\Publisher;
 use App\Http\Requests\PublisherRequest;
@@ -12,18 +13,8 @@ class PublishersController extends Controller
 {
   public function index(Request $request)
   {
-      $name = $request->input('name');
-
-      $publisher = Publisher::with('books')
-          ->when($name, function($query) use($name) {
-              return $query->where('name', 'like', "%$name%");
-          ->when($address, function($query) use($address) {
-                  return $query->where('address', 'like', "%$address%");
-          ->when($email, function($query) use($email) {
-                  return $query->where('email', 'like', "%$email%");
-          })
-
-      return new PublisherCollection($publisher);
+    $publishers = Publisher::orderBy('name','asc')->get();
+      return view('/admin/publisher/index',['publishers' => $publishers]);
   }
 
   /**
@@ -121,6 +112,21 @@ class PublishersController extends Controller
    */
   public function destroy($id)
   {
-      //
+    $publisher = Publisher::findOrFail($id);
+    $publisher->delete();
+    return redirect()->route('/publisherindex')->with(['message'=> 'Successfully deleted!!']);
+  }
+
+  public function edit($id){
+		$publisher = Publisher::find($id);
+		if(!$publisher) throw new ModelNotFoundException;
+
+		return view('/admin/publisher/edit', ['publisher'=> $publisher]);
+	}
+
+  public function create(){
+    $publisher = new Publisher();
+
+		return view('/admin/publisher/create', ['publisher' => $publisher,]);
   }
 }

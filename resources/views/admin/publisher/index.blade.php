@@ -14,7 +14,8 @@ use App\Common;
 					style="border-collapse:collapse;font-family:Arial;">
 			<!-- Table Headings -->
 			<thead>
-			<a href="{{ url('/admin/publisher/create') }}">Add New Tenant</a>
+			<a href="{{ url('/admin') }}">Admin Home Page         </a>
+			<a href="{{ url('/publisher/create') }}"> Add New Publisher</a>
 			<br>
 				<tr>
 				 <th>No.</th>
@@ -54,7 +55,7 @@ use App\Common;
       </td>
 			 <td class="table-text">
 				 <div>
-				 {!! link_to_route( '',
+				 {!! link_to_route( 'publsher.edit',
 									 $title = 'Edit',
 									 $parameters = ['id' => $publisher->id, ]
 				  ) !!}
@@ -66,7 +67,7 @@ use App\Common;
 				<div>
 
 				{!! Form::open(['method' => 'DELETE',
-								'route' => ['',
+								'route' => ['publisher.destroy',
 								$publisher->id],
 								'onsubmit' => 'return confirm("Are you sure ?")']
 				) !!}
