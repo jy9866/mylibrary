@@ -14,11 +14,8 @@ use App\Common;
 					style="border-collapse:collapse;font-family:Arial;">
 			<!-- Table Headings -->
 			<thead>
-<<<<<<< HEAD
+			<a href="{{ url('/admin') }}">Admin Home Page         </a>
 			<a href="{{ url('/admin/book/create') }}">Add New Book</a>
-=======
-			<a href="{{ url('/admin/book/create') }}">Add New Tenant</a>
->>>>>>> 2267a4eacb32615c1e262148be691964c7445d18
 			<br>
 				<tr>
 				 <th>No.</th>
