@@ -51,7 +51,7 @@ class BookController extends Controller
       public function show($id)
 	{
 		$book = Book::with('authors')->find($id);
-
+    	$author = Author::pluck('name','id');
     return view('/book/show',[
                 'book'=> $book,
     ]);
@@ -62,13 +62,18 @@ class BookController extends Controller
         //
 		$book = Book::find($id);
 		if(!$book) throw new ModelNotFoundException;
-		
+
 		$author = Author::pluck('name','id');
 
 		return view('/books/edit', [
 		'book' => $book,
 		'author' => $author,
 		]);
+    }
+
+    public function adminbookindex(){
+      $books = Book::orderBy('name','category','asc')->get();
+      return view('/admin/book/index',['books' => $books]);
     }
 
 }

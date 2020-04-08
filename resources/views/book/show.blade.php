@@ -56,7 +56,6 @@ p.a{
       <p class="a"> Publisher Address : {{$book->publisher->address}}</p>
       <p class="a"> Publisher Email : {{$book->publisher->email}}</p>
       <p class="a"> Author Name : {{$book->authors->name}}</p>
-
   </div>
 </div>
 </div>
