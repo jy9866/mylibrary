@@ -35,6 +35,13 @@ Route::delete('/publisher/{id}', 'PublishersController@destroy')->name('publishe
 Route::put('/publisher/{id}','PublishersController@update')->name('publisher.update')->middleware('auth');
 Route::post('/publisher/store','PublishersController@store')->name('publisher.store')->middleware('auth');
 
+Route::get('/authorindex','AuthorController@index')->name('author.index')->middleware('auth');;
+Route::get('/author/create','AuthorController@create')->name('author.create')->middleware('auth');
+Route::get('/author/{id}/edit','AuthorController@edit')->name('author.edit')->middleware('auth');
+Route::delete('/author/{id}', 'AuthorController@destroy')->name('author.destroy');
+Route::put('/author/{id}','AuthorController@update')->name('author.update')->middleware('auth');
+Route::post('/author/store','AuthorController@store')->name('author.store')->middleware('auth');
+
 Route::post('/logout', 'AuthController@logout');
 
 Auth::routes();

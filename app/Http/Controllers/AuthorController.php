@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Http\Controllers;
 use App\Author;
 use App\Http\Requests\AuthorRequest;
 use App\Http\Resources\AuthorCollection;
@@ -12,14 +12,8 @@ class AuthorController extends Controller
 {
   public function index(Request $request)
   {
-      $name = $request->input('name');
-
-      $author = Author::with('books')
-          ->when($name, function($query) use($name) {
-              return $query->where('name', 'like', "%$name%");
-          })
-
-      return new AuthorCollection($author);
+    $authors = Author::orderBy('name','asc')->get();
+      return view('/admin/author/index',['authors' => $authors]);
   }
 
   /**
@@ -28,29 +22,16 @@ class AuthorController extends Controller
    * @param  \Illuminate\Http\Request  $request
    * @return \Illuminate\Http\Response
    */
-  public function store(AuthorRequest $request)
+  public function store(Request $request)
   {
-      try {
-          $author = new Author;
-          $author->fill($request->all());
+    $request->validate([
+			'name' => 'required|max:30',
+			]);
+		$author = new Author();
+		$author->fill($request->all());
+		$author->save();
 
-          $author->saveOrFail();
-
-          return response()->json([
-              'id' => $author->id,
-              'created_at' => $author->created_at,
-          ], 201);
-      }
-      catch(QueryException $ex) {
-          return response()->json([
-              'message' => $ex->getMessage(),
-          ], 500);
-      }
-      catch(\Exception $ex) {
-          return response()->json([
-              'message' => $ex->getMessage(),
-          ], 500);
-      }
+      	return redirect()->route('author.index');
   }
 
   /**
@@ -63,9 +44,9 @@ class AuthorController extends Controller
   {
       try {
           $author = Author::with('books')->find($id);
-          if(!$Author) throw new ModelNotFoundException;
+          if(!$author) throw new ModelNotFoundException;
 
-          return new AuthorResource($Author);
+          return new AuthorResource($author);
       }
       catch(ModelNotFoundException $ex) {
           return response()->json([
@@ -80,33 +61,19 @@ class AuthorController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function update(AuthorRequest $request, $id)
+  public function update(Request $request, $id)
   {
-      try {
-          $author = Author::find($id);
-          if(!$author) throw new ModelNotFoundException;
+    $request->validate([
+			'name' => 'required|max:30',
+			]);
 
-          $author->fill($request->all());
+      $author = Author::find($id);
+        if(!$author) throw new ModelNotFoundException;
 
-          $author->saveOrFail();
+         $author->fill($request->all());
+         $author->save();
 
-          return response()->json(null, 204);
-      }
-      catch(ModelNotFoundException $ex) {
-          return response()->json([
-              'message' => $ex->getMessage(),
-          ], 404);
-      }
-      catch(QueryException $ex) {
-          return response()->json([
-              'message' => $ex->getMessage(),
-          ], 500);
-      }
-      catch(\Exception $ex) {
-          return response()->json([
-              'message' => $ex->getMessage(),
-          ], 500);
-      }
+         return redirect()->route('author.index');
   }
 
   /**
@@ -117,6 +84,21 @@ class AuthorController extends Controller
    */
   public function destroy($id)
   {
-      //
+    $author = Author::findOrFail($id);
+    $author->delete();
+    return redirect()->route('author.index')->with(['message'=> 'Successfully deleted!!']);
+  }
+
+  public function edit($id){
+		$author = Author::find($id);
+		if(!$author) throw new ModelNotFoundException;
+
+		return view('/admin/author/edit', ['author'=> $author]);
+	}
+
+  public function create(){
+    $author = new Author();
+
+		return view('/admin/author/create', ['author' => $author,]);
   }
 }
