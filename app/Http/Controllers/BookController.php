@@ -47,7 +47,33 @@ class BookController extends Controller
   		->with('getTenantsByCategory10', $getTenantsByCategory10);
       return new BookCollection($books);
       	return view('/resources/book');
-      }
+	  }
+	  
+	  
+	  public function create()
+	  {
+		  //
+		  $book = new Book();
+		  $authors = Author::pluck('name','id');
+  
+		  // modify this view ya
+		  return view('books.create', [
+		  'book' => $book,
+		  'authors' => $authors,
+		  ]);
+	  }
+
+	  public function store(Request $request)
+    {
+        //
+		$book = new Book;
+		$book->fill($request->all());
+		$book->save();
+		
+		$book->authors()->sync($request->get('authors'));
+	
+		return redirect()->route('/bookindex');
+    }
 
       public function show($id)
 	{
