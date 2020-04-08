@@ -57,4 +57,18 @@ class BookController extends Controller
     ]);
 	}
 
+	public function edit($id)
+    {
+        //
+		$book = Book::find($id);
+		if(!$book) throw new ModelNotFoundException;
+		
+		$author = Author::pluck('name','id');
+
+		return view('/books/edit', [
+		'book' => $book,
+		'author' => $author,
+		]);
+    }
+
 }
