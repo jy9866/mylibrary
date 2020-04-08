@@ -23,29 +23,18 @@ class PublishersController extends Controller
    * @param  \Illuminate\Http\Request  $request
    * @return \Illuminate\Http\Response
    */
-  public function store(PublisherRequest $request)
+  public function store(Request $request)
   {
-      try {
-          $publisher = new Publisher;
-          $publisher->fill($request->all());
+    $request->validate([
+			'name' => 'required|max:30',
+			'address' => 'required|max:200',
+			'email'=> "required|string|email|max:255",
+			]);
+		$publisher = new Publisher();
+		$publisher->fill($request->all());
+		$publisher->save();
 
-          $publisher->saveOrFail();
-
-          return response()->json([
-              'id' => $Publisher->id,
-              'created_at' => $Publisher->created_at,
-          ], 201);
-      }
-      catch(QueryException $ex) {
-          return response()->json([
-              'message' => $ex->getMessage(),
-          ], 500);
-      }
-      catch(\Exception $ex) {
-          return response()->json([
-              'message' => $ex->getMessage(),
-          ], 500);
-      }
+      	return redirect()->route('publisher.index');
   }
 
   /**
@@ -75,33 +64,21 @@ class PublishersController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
-  public function update(PublisherRequest $request, $id)
+  public function update(Request $request, $id)
   {
-      try {
-          $Publisher = Publisher::find($id);
-          if(!$Publisher) throw new ModelNotFoundException;
+    $request->validate([
+			'name' => 'required|max:30',
+			'address' => 'required|max:200',
+			'email'=> "required|string|email|max:255",
+			]);
 
-          $Publisher->fill($request->all());
+      $publisher = Publisher::find($id);
+        if(!$publisher) throw new ModelNotFoundException;
 
-          $Publisher->saveOrFail();
+         $publisher->fill($request->all());
+         $publisher->save();
 
-          return response()->json(null, 204);
-      }
-      catch(ModelNotFoundException $ex) {
-          return response()->json([
-              'message' => $ex->getMessage(),
-          ], 404);
-      }
-      catch(QueryException $ex) {
-          return response()->json([
-              'message' => $ex->getMessage(),
-          ], 500);
-      }
-      catch(\Exception $ex) {
-          return response()->json([
-              'message' => $ex->getMessage(),
-          ], 500);
-      }
+         return redirect()->route('publisher.index');
   }
 
   /**
@@ -114,7 +91,7 @@ class PublishersController extends Controller
   {
     $publisher = Publisher::findOrFail($id);
     $publisher->delete();
-    return redirect()->route('/publisherindex')->with(['message'=> 'Successfully deleted!!']);
+    return redirect()->route('publisher.index')->with(['message'=> 'Successfully deleted!!']);
   }
 
   public function edit($id){
