@@ -25,6 +25,11 @@ class CreatePublishersTable extends Migration
             $table->timestamps();
         });
 
+        //insert
+        /* DB::table('publishers')->insert(['name'=>'',
+       'address'=>'','email'=>'']);
+       */
+
     }
 
     /**
