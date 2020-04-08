@@ -19,7 +19,7 @@ class PublisherResource extends Resource
             'name'  => $this->when(!is_null($this->name), $this->name),
             'address'  => $this->when(!is_null($this->address), $this->address),
             'email'  => $this->when(!is_null($this->email), $this->email),
-            'books' => BookResource::collection($this->whenLoaded('books')),
+            
         ];
     }
 }

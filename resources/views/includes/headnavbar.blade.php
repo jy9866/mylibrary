@@ -18,10 +18,6 @@
       <li class="nav-item">
        <a class="nav-link" href="{{ url('/register') }}"><i class="fa fa-fw fa-pencil-square-o"></i>Register</a>
       </li>
-      <li class="nav-item">
-       <a class="nav-link" href="/logout"><i class="fa fa-fw fa-sign-out"></i>Logout</a>
-      </li>
-
     </ul>
 
 </nav>

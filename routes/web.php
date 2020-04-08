@@ -21,7 +21,10 @@ Route::get('/facilities', 'HomeController@getFacilities');
 Route::get('/contactus', 'HomeController@getContactUs');
 Route::get('/book', 'BookController@getBook');
 Route::get('/bookshow/{id}', 'BookController@show') ->name('/bookshow');
-
+Route::get('/admin', 'HomeController@getAdminPage');
+Route::get('/bookindex','BookController@adminbookindex');
+Route::get('/book/{id}/edit','BookController@edit')->name('book.edit')->middleware('auth');
+Route::delete('/book/{id}', 'TenantController@destroy')->name('book.destroy');
 Route::post('/logout', 'AuthController@logout');
 
 Auth::routes();

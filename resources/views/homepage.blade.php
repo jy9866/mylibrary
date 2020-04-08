@@ -49,7 +49,6 @@ td{
 }
 
 </style>
-
 @extends('layout.front')
 
 @section('title','HomePage')
@@ -57,30 +56,6 @@ td{
 
 @section('content')
 <div id="tabContent" style="background-color:#E6E6FA">
-<table>
-<tbody>
-<tr>
-<td height="61">
-	<form>
-        <div>
-					<input id="ebscohostsearchtext" name="ebscohostsearchtext" type="text" size="50" style="font-size:15pt;padding-left:5px;margin-left:0px;">
-					<input type="submit" value="Search" style="font-size:15pt;padding-left:5px;">
-
-				<div id="guidedFieldSelectors">
-					<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_0" value="" checked="checked">
-					<label class="label" for="guidedField_0"><font color="#001177"> Title</font></label>
-					<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_1" value="AU">
-					<label class="label" for="guidedField_1"><font color="#001177"> Author</font></label>
-					<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_2" value="PU">
-					<label class="label" for="guidedField_2"><font color="#001177"> Publisher</font></label>
-				</div>
-		   </div>
-	 </form>
-</td>
-</tr>
-</tbody>
-</table>
-<div>
 
 <div class="row">
   <div class="column side">

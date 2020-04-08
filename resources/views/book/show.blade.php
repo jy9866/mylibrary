@@ -55,14 +55,10 @@ p.a{
       <p class="a"> Publisher Name : {{$book->publisher ->name}}</p>
       <p class="a"> Publisher Address : {{$book->publisher->address}}</p>
       <p class="a"> Publisher Email : {{$book->publisher->email}}</p>
-<<<<<<< HEAD
-      <p class="a"> Author Name : {{$book->authors->name}}</p>
-=======
       @foreach($authors as $author)
       <p class="a"> Author Name : {{$author->name}}</p>
       @endforeach
 
->>>>>>> 4e1a94b248918074144ed6a1bd04b99693a51c25
   </div>
 </div>
 </div>

@@ -44,5 +44,9 @@ class HomeController extends Controller
     return view('/resources/author');
   }
 
+  public function getAdminPage(){
+    return view('/admin/adminhomepage');
+  }
+
 
 }
