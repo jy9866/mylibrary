@@ -23,7 +23,8 @@ class CreateAuthorsTable extends Migration
         });
 
     }
-
+    //Insert
+    DB::table('authors')->insert(['name'=>'']);
     /**
      * Reverse the migrations.
      *

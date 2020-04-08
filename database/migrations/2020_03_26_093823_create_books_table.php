@@ -27,7 +27,8 @@ class CreateBooksTable extends Migration
              $table->unsignedInteger('author_id')->nullable($value = false);
              $table->unsignedInteger('publisher_id')->nullable($value = false);
 
-             $table->timestamps();
+             $table->timestamps('created_at');
+             $table->timestamps('updated_at');
 
              $table->foreign('author_id')
                    ->references('id')->on('authors');
@@ -36,6 +37,10 @@ class CreateBooksTable extends Migration
 
          });
       }
+
+      //Insert
+      //DB::table('books')->insert(['image'=>'','title'=>'', 'category'=>'', 'status'=>'', 'edition'=>'', 'year'=>'', 'author_id'=>'', 'publisher_id'=>'']);
+
       public function down()
       {
           Schema::dropIfExists('books');
