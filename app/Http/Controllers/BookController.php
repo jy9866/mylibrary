@@ -76,6 +76,22 @@ class BookController extends Controller
 		'book' => $book,
 		'author' => $author,
 		]);
+	}
+	
+	public function update(Request $request, $id)
+    {
+        //
+		$book = Book::find($id);
+		if(!$book) throw new ModelNotFoundException;
+
+		$book->fill($request->all());
+
+        $book->saveOrFail();
+		
+		$book->authors()->sync($request->input('author'));
+
+
+		return redirect()->route('/bookindex');
     }
 
     public function adminbookindex(){
