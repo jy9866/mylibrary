@@ -23,6 +23,10 @@ class CreateAuthorBookTable extends Migration
         });
     }
 
+    //Insert
+    //DB::table('author_book')->insert(['author_id'=>'','book_id'=>'']);
+
+
     /**
      * Reverse the migrations.
      *

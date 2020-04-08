@@ -26,7 +26,7 @@ class CreatePublishersTable extends Migration
         });
 
         //insert
-        /* DB::table('publishers')->insert(['name'=>'',
+        DB::table('publishers')->insert(['name'=>'',
        'address'=>'','email'=>'']);
        */
 
