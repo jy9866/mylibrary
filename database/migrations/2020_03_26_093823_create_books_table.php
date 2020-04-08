@@ -39,7 +39,7 @@ class CreateBooksTable extends Migration
       }
 
       //Insert
-      //DB::table('books')->insert(['image'=>'','title'=>'', 'category'=>'', 'status'=>'', 'edition'=>'', 'year'=>'', 'author_id'=>'', 'publisher_id'=>'']);
+      DB::table('books')->insert(['image'=>'','title'=>'Indian and World Geography', 'category'=>'Geography and History', 'status'=>'available', 'edition'=>'4', 'year'=>'2017']);
 
       public function down()
       {

@@ -26,9 +26,10 @@ class CreatePublishersTable extends Migration
         });
 
         //insert
-        DB::table('publishers')->insert(['name'=>'',
-       'address'=>'','email'=>'']);
-       */
+        /*DB::table('publishers')->insert(['name'=>'McGraw-Hill Education',
+        'address'=>'Mcgraw Hill Education (India) Pvt Ltd Suite No 818, 8th Floor, The Estate, 121, Dickenson Road, Sivanchetti Gardens, Bengaluru, Karnataka 560001, Indi',
+        'email'=>'Editorial.India@mheducation.com']);
+        */
 
     }
 
