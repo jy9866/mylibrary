@@ -55,7 +55,9 @@ p.a{
       <p class="a"> Publisher Name : {{$book->publisher ->name}}</p>
       <p class="a"> Publisher Address : {{$book->publisher->address}}</p>
       <p class="a"> Publisher Email : {{$book->publisher->email}}</p>
-      <p class="a"> Author Name : {{$book->authors->name}}</p>
+      @foreach($authors as $author)
+      <p class="a"> Author Name : {{$author->name}}</p>
+      @endforeach
 
   </div>
 </div>
