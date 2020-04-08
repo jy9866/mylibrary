@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use DB;
 use App\Book;
+use App\Author;
 use App\Http\Requests\BookRequest;
 use App\Http\Resources\BookCollection;
 use App\Http\Resources\BookResource;
@@ -50,10 +51,23 @@ class BookController extends Controller
 
       public function show($id)
 	{
+<<<<<<< HEAD
 		$book = Book::with('authors')->find($id);
     	$author = Author::pluck('name','id');
     return view('/book/show',[
                 'book'=> $book,
+=======
+		$book = Book::find($id);
+		if(!$book) throw new ModelNotFoundException;
+
+		$authors = Author::pluck('name','id');
+
+		$book = Book::find($id);
+		$authors = $book->authors()->get();	
+		return view('/book/show',[
+				'book'=> $book,
+				'authors' =>$authors,
+>>>>>>> 4e1a94b248918074144ed6a1bd04b99693a51c25
     ]);
 	}
 
