@@ -24,7 +24,7 @@ class CreateAuthorsTable extends Migration
 
     }
     //Insert
-    DB::table('authors')->insert(['name'=>'']);
+    DB::table('authors')->insert(['name'=>'Majid Husain']);
     /**
      * Reverse the migrations.
      *
