@@ -50,9 +50,9 @@ class BookController extends Controller
 
       public function show($id)
 	{
-		$tenant = Book::find($id);
+		$book = Book::find($id);
 
-    return view('book.index',[
+    return view('/book/show',[
                 'book'=> $book,
     ]);
 	}

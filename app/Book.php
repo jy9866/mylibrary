@@ -10,16 +10,13 @@ class Book extends Model
     'image', 'title', 'category', 'status','edition','year','author_id', 'publisher_id',
 ];
 
-/**
-* one author can have many books
-*/
-  public function authors()
-  {
-    return $this->belongToMany(Author::class);
-  }
+    public function publisher()
+    {
+        return $this->belongsTo(Publisher::class);
+    }
 
-  public function publishers()
-  {
-    return $this->belongsTo(Publisher::class);
+    public function authors()
+    {
+        return $this->belongsToMany(Author::class);
+    }
   }
-}
