@@ -12,14 +12,8 @@
     <li class="nav-item">
       <a class="nav-link" href="/aboutus"><i class="fa fa-fw fa-users"></i>About Us</a>
     </li>
-    <li class="nav-item dropdown">
-           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           <i class="fa fa-fw fa-suitcase"></i>Resources</a>
-           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-             <a class="dropdown-item" href="Book"><i class="fa fa-fw fa-book"></i>Book</a>
-             <a class="dropdown-item" href="Journal"><i class="fa fa-fw fa-building"></i>Publisher</a>
-             <a class="dropdown-item" href="Journal"><i class="fa fa-fw fa-user"></i>Author</a>
-           </div>
+    <li class="nav-item">
+      <a class="nav-link" href="/book"><i class="fa fa-fw fa-book"></i>Book</a>
          </li>
   <li class="nav-item">
     <a class="nav-link" href="/facilities"><i class="fa fa-fw fa-institution"></i>Facilities</a>

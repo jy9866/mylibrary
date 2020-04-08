@@ -19,5 +19,9 @@ Route::get('/aboutusservice','HomeController@getaboutusservices');
 Route::get('/aboutuscontactus','HomeController@getaboutcontactus');
 Route::get('/facilities', 'HomeController@getFacilities');
 Route::get('/contactus', 'HomeController@getContactUs');
+Route::get('/book', 'BookController@getBook');
+Route::get('/bookshow/{id}', 'BookController@show') ->name('/bookshow');
+
 Route::post('/logout', 'AuthController@logout');
+
 Auth::routes();

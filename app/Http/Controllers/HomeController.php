@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -33,4 +32,17 @@ class HomeController extends Controller
   public function getContactUs(){
     return view('contactus');
   }
+
+  public function getbookshow(){
+    return view('/book/show');
+  }
+  public function getPublisher(){
+    return view('/resources/publisher');
+  }
+
+  public function getAuthor(){
+    return view('/resources/author');
+  }
+
+
 }
