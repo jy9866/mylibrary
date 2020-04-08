@@ -48,20 +48,15 @@ class BookController extends Controller
       return new BookCollection($books);
       	return view('/resources/book');
 	  }
-	  
-	  
+
+
 	  public function create()
 	  {
-		  //
-		  $book = new Book();
-		  $authors = Author::pluck('name','id');
-  
-		  // modify this view ya
-		  return view('books.create', [
-		  'book' => $book,
-		  'authors' => $authors,
-		  ]);
-	  }
+        $book = new Book();
+
+       return view('/admin/book/create', ['book' => $book,]);
+      }
+
 
 	  public function store(Request $request)
     {
@@ -69,9 +64,9 @@ class BookController extends Controller
 		$book = new Book;
 		$book->fill($request->all());
 		$book->save();
-		
+
 		$book->authors()->sync($request->get('authors'));
-	
+
 		return redirect()->route('/bookindex');
     }
 
@@ -98,12 +93,12 @@ class BookController extends Controller
 
 		$author = Author::pluck('name','id');
 
-		return view('/books/edit', [
+		return view('/book/edit', [
 		'book' => $book,
 		'author' => $author,
 		]);
 	}
-	
+
 	public function update(Request $request, $id)
     {
         //
@@ -113,7 +108,7 @@ class BookController extends Controller
 		$book->fill($request->all());
 
         $book->saveOrFail();
-		
+
 		$book->authors()->sync($request->input('author'));
 
 
