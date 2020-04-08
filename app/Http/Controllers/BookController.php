@@ -125,11 +125,11 @@ class BookController extends Controller
 	}
 
     public function adminbookindex(){
-		if (Gate::allows('admin-only',auth()->user())) {
+		//if (Gate::allows('admin-only',auth()->user())) {
 
       $books = Book::orderBy('title','category','asc')->get();
 	  return view('/admin/book/index',['books' => $books]);
-    	}
-		return redirect('/');
+    	//}
+		//return redirect('/');
 	}
 }

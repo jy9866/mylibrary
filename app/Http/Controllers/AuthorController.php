@@ -7,13 +7,18 @@ use App\Http\Resources\AuthorResource;
 use Illuminate\Http\Request;
 use Illuminate\Database\QueryException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Facades\Gate;
+
 
 class AuthorController extends Controller
 {
   public function index(Request $request)
   {
+    if (Gate::allows('admin-only',auth()->user())) {
     $authors = Author::orderBy('name','asc')->get();
       return view('/admin/author/index',['authors' => $authors]);
+    }
+		return redirect('/');
   }
 
   /**
@@ -90,15 +95,21 @@ class AuthorController extends Controller
   }
 
   public function edit($id){
+    if (Gate::allows('admin-only',auth()->user())) {
 		$author = Author::find($id);
 		if(!$author) throw new ModelNotFoundException;
 
-		return view('/admin/author/edit', ['author'=> $author]);
+    return view('/admin/author/edit', ['author'=> $author]);
+  }
+  return redirect('/');
 	}
 
   public function create(){
+    if (Gate::allows('admin-only',auth()->user())) {
     $author = new Author();
 
-		return view('/admin/author/create', ['author' => $author,]);
+    return view('/admin/author/create', ['author' => $author,]);
+  }
+  return redirect('/');
   }
 }
