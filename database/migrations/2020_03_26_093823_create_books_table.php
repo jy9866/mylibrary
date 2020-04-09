@@ -18,7 +18,7 @@ class CreateBooksTable extends Migration
          Schema::create('books', function (Blueprint $table) {
              $table->engine='InnoDB';
              $table->increments('id');
-             $table->string('image')->nullable();
+             $table->binary('image')->nullable();
              $table->string('title', 150);
              $table->string('category', 100);
              $table->string('status', 20);
