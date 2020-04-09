@@ -48,17 +48,6 @@ use App\Common;
 				</div>
 			</div>
 			<br></br>
-      <!-- Category -->
-			<div class="form-group row">
-				{!! Form::label('book-category','Category',['class' => 'control-label col-sm-3',]) !!}
-				<div class="col-sm-9">
-					@foreach(Common::$categorys as $key => $val)
-					{!! Form::radio('category',$key) !!} {{$val}}<br>
-					@endforeach
-				<p>{{ $errors->getBag('default')->first('category') }}</p>
-				</div>
-			</div>
-			<br></br>
 			<div class="form-group row">
 				{!! Form::label('book-status','Status',['class' => 'control-label col-sm-3',]) !!}
 				<div class="col-sm-9">
