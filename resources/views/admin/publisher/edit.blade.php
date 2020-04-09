@@ -10,7 +10,7 @@
 	 <!-- Bootstrap Boilerplate... -->
 
 	 <div class="panel-body">
-	 <button><a href="{{ url("/publisherindex") }}">Return to publisher List</a></button>
+	 <button><a href="{{ url('/publisherindex') }}">Return to publisher List</a></button>
 		 <!-- New Division Form -->
 			 {!! Form::model($publisher, [
 			 'route' => ['publisher.update', $publisher->id],
