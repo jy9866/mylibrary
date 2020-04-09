@@ -22,8 +22,8 @@ class CreatePublishersTable extends Migration
             $table->string('name', 150);
             $table->string('address', 150);
             $table->string('email', 50);
-            $table->timestamps('created_at');
-            $table->timestamps('updated_at');
+            $table->timestamps();
+
         });
 
 

@@ -19,12 +19,11 @@ class CreateAuthorsTable extends Migration
             $table->engine='InnoDB';
             $table->increments('id');
             $table->string('name', 150);
-            $table->timestamps('created_at');
-            $table->timestamps('updated_at');
+            $table->timestamps();
         });
 
     }
-    
+
     /**
      * Reverse the migrations.
      *
