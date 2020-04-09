@@ -45,6 +45,4 @@ Route::delete('/author/{id}', 'AuthorController@destroy')->name('author.destroy'
 Route::put('/author/{id}','AuthorController@update')->name('author.update')->middleware('auth');
 Route::post('/author/store','AuthorController@store')->name('author.store')->middleware('auth');
 
-Route::post('/logout', 'AuthController@logout');
-
 Auth::routes();
