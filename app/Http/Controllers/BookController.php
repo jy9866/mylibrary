@@ -105,8 +105,20 @@ class BookController extends Controller
           $book = Book::find($id);
             if(!$book) throw new ModelNotFoundException;
 
-             $book->fill($request->all());
-             $book->save();
+			$book->fill($request->except('image'));
+		
+			if($request->hasFile('image')) {
+				$file = $request->file('image');
+				$extension = $file->getClientOriginalExtension();//getting image extension
+				$filename = time().'.'.$extension;
+				$file->move('uploads/books/',$filename);
+				$book->image = $filename;
+			}
+			else{
+				$book->fill(['image'=>'']);
+			}
+			$book->save();
+			$book->authors()->sync($request->get('authors'));
 
              return redirect()->route('book.index');
 	}
@@ -130,7 +142,8 @@ class BookController extends Controller
   public function edit($id){
 		$book = Book::find($id);
 		if(!$book) throw new ModelNotFoundException;
+		$authors = Author::pluck('name','id');
 
-		return view('/admin/book/edit', ['book'=> $book]);
+		return view('/admin/book/edit', ['book'=> $book,'authors' => $authors,]);
 	}
 }

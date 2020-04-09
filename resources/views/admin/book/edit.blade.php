@@ -15,7 +15,8 @@
 			 {!! Form::model($book, [
 			 'route' => ['book.update', $book->id],
 			 'method' => 'put',
-			 'class' => 'form-horizontal'
+			 'class' => 'form-horizontal',
+			 'files' =>true
 			 ]) !!}
 
 			<div class="form-group_row">
@@ -33,15 +34,11 @@
       <br></br>
       <div class="form-group_row">
 				{!! Form::label('book-image','Image',['class' => 'control-label col-sm-3',]) !!}
-				<div class="col-sm-9">
-					{!! Form::text('image',null,[
-						'id'		=> 'book-image',
-						'class'		=> 'form-control',
-						'maxlength' => 255,
-					]) !!}
-				<p>{{ $errors->getBag('default')->first('image') }}</p>
-				</div>
+				<div class="col-sm-0">
+			{!! Form::file('image') !!}
 			</div>
+		</div>
+		<br>
 			<div class="form-group row">
 				{!! Form::label('book-category','Category',['class' => 'control-label col-sm-3',]) !!}
 				<div class="col-sm-9">
@@ -86,17 +83,17 @@
         </div>
       </div>
       <br>
-      <div class="form-group_row">
-        {!! Form::label('book-author_id','Author Id',['class' => 'control-label col-sm-3',]) !!}
-        <div class="col-sm-9">
-          {!! Form::text('author_id',null,[
-            'id'		=> 'book-status',
-            'class'		=> 'form-control',
-            'maxlength' => 2,
-          ]) !!}
-          <p>{{ $errors->getBag('default')->first('author_id') }}</p>
-        </div>
-        </div>
+	  <div class="form-group row">
+					{!! Form::label('authors-name','Authors',['class' => 'control-label col-sm-3',]) !!}
+					<br>
+					<div class="col-sm-9">
+						{!! Form::select('authors[]',
+							$authors,
+							null,
+							['class' => 'form-control',
+							'multiple' => 'multiple']) !!}
+					</div>
+				</div>
         <br></br>
         <div class="form-group_row">
           {!! Form::label('book-publisher_id','Publisher Id',['class' => 'control-label col-sm-3',]) !!}
