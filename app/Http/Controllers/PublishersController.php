@@ -8,13 +8,19 @@ use App\Http\Resources\PublisherResource;
 use Illuminate\Http\Request;
 use Illuminate\Database\QueryException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Facades\Gate;
+
 
 class PublishersController extends Controller
 {
   public function index(Request $request)
   {
+    if (Gate::allows('admin-only',auth()->user())) {
+
     $publishers = Publisher::orderBy('name','asc')->get();
       return view('/admin/publisher/index',['publishers' => $publishers]);
+    }
+		return redirect('/');
   }
 
   /**
@@ -95,15 +101,21 @@ class PublishersController extends Controller
   }
 
   public function edit($id){
+    if (Gate::allows('admin-only',auth()->user())) {
 		$publisher = Publisher::find($id);
 		if(!$publisher) throw new ModelNotFoundException;
 
-		return view('/admin/publisher/edit', ['publisher'=> $publisher]);
+    return view('/admin/publisher/edit', ['publisher'=> $publisher]);
+    }
+    return redirect('/');
 	}
 
   public function create(){
-    $publisher = new Publisher();
+    if (Gate::allows('admin-only',auth()->user())) {
 
-		return view('/admin/publisher/create', ['publisher' => $publisher,]);
+    $publisher = new Publisher();
+    return view('/admin/publisher/create', ['publisher' => $publisher,]);
+  }
+  return redirect('/');
   }
 }

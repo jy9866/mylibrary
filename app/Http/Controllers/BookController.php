@@ -54,13 +54,15 @@ class BookController extends Controller
 
 	  public function create()
 	  {
+		if (Gate::allows('admin-only',auth()->user())) {
 		$book = new Book();
 		$authors = Author::pluck('name','id');
 		return view('/admin/book/create', [
 			'book' => $book,
 			'authors' => $authors,
 			]);
-      // return view('/admin/book/create', ['book' => $book,]);
+		}
+		return redirect('/');
       }
 
 
@@ -131,19 +133,22 @@ class BookController extends Controller
 	}
 
     public function adminbookindex(){
-		//if (Gate::allows('admin-only',auth()->user())) {
+		if (Gate::allows('admin-only',auth()->user())) {
 
       $books = Book::orderBy('title','category','asc')->get();
 	  return view('/admin/book/index',['books' => $books]);
-    	//}
-		//return redirect('/');
+    	}
+		return redirect('/');
 	}
 
   public function edit($id){
+	  if (Gate::allows('admin-only',auth()->user())) {
 		$book = Book::find($id);
 		if(!$book) throw new ModelNotFoundException;
 		$authors = Author::pluck('name','id');
 
 		return view('/admin/book/edit', ['book'=> $book,'authors' => $authors,]);
+		}
+  		return redirect('/');
 	}
 }

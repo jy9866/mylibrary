@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
+
 
 class HomeController extends Controller
 {
@@ -45,7 +47,11 @@ class HomeController extends Controller
   }
 
   public function getAdminPage(){
+    if (Gate::allows('admin-only',auth()->user())) {
+
     return view('/admin/adminhomepage');
+  }
+  return redirect('/');
   }
 
 
