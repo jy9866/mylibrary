@@ -20,7 +20,7 @@ use App\Common;
 			{!! Form::text('title',null,[
 							'id'		=> 'book-title',
 							'class'		=> 'form-control',
-							'maxlength' => 30,
+							'maxlength' => 1000,
 				]) !!}
 			<p>{{ $errors->getBag('default')->first('title') }}</p>
 			</div>
@@ -32,7 +32,7 @@ use App\Common;
 					{!! Form::text('image',null,[
 						'id'		=> 'book-image',
 						'class'		=> 'form-control',
-						'maxlength' => 255,
+						'maxlength' => 10000,
 					]) !!}
 				<p>{{ $errors->getBag('default')->first('image') }}</p>
 				</div>

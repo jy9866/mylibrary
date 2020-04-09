@@ -17,7 +17,7 @@
            					{!! Form::text('name',null,[
            						'id'		=> 'publisher-name',
            						'class'		=> 'form-control',
-           						'maxlength' => 255,
+           						'maxlength' => 1000,
            					]) !!}
            				</div>
            			<p>{{ $errors->getBag('default')->first('name') }}</p>
@@ -30,7 +30,7 @@
            					{!! Form::text('address',null,[
            						'id'		=> 'publisher-address',
            						'class'		=> 'form-control',
-           						'maxlength' => 255,
+           						'maxlength' => 1000,
            					]) !!}
            				</div>
            			<p>{{ $errors->getBag('default')->first('address') }}</p>

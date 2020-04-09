@@ -17,7 +17,7 @@
            					{!! Form::text('name',null,[
            						'id'		=> 'author-name',
            						'class'		=> 'form-control',
-           						'maxlength' => 255,
+           						'maxlength' => 1000,
            					]) !!}
            				</div>
            			<p>{{ $errors->getBag('default')->first('name') }}</p>
