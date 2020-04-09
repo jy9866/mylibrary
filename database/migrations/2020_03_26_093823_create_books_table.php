@@ -18,7 +18,7 @@ class CreateBooksTable extends Migration
          Schema::create('books', function (Blueprint $table) {
              $table->engine='InnoDB';
              $table->increments('id');
-             $table->string('image')->nullable();
+             $table->longText('image')->nullable();
              $table->string('title', 150);
              $table->string('category', 100);
              $table->string('status', 20);
@@ -27,8 +27,6 @@ class CreateBooksTable extends Migration
              $table->unsignedInteger('author_id')->nullable($value = false);
              $table->unsignedInteger('publisher_id')->nullable($value = false);
 
-             $table->timestamps('created_at');
-             $table->timestamps('updated_at');
              $table->timestamps();
 
              $table->foreign('author_id')
