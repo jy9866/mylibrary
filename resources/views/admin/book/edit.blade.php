@@ -24,11 +24,8 @@
 					{!! Form::text('title',null,[
 						'id'		=> 'book-title',
 						'class'		=> 'form-control',
-<<<<<<< HEAD
 						'maxlength' => 1000,
-=======
-						'maxlength' => 255,
->>>>>>> 82f7d4508f68696075dc4fefedd6e2093a3f3beb
+
 					]) !!}
 				</div>
 			<p>{{ $errors->getBag('default')->first('name') }}</p>
@@ -40,7 +37,7 @@
 					{!! Form::text('image',null,[
 						'id'		=> 'book-image',
 						'class'		=> 'form-control',
-						'maxlength' => 10000,
+						'maxlength' => 255,
 					]) !!}
 				<p>{{ $errors->getBag('default')->first('image') }}</p>
 				</div>
