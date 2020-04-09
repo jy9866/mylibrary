@@ -21,7 +21,7 @@ class Common
 
 	public static $status =[
 		'Available' => 'Available',
-		'on Loan' => 'On Loan',
+		'On Loan' => 'On Loan',
 	];
 
 }
