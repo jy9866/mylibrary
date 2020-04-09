@@ -15,6 +15,7 @@ use App\Common;
 			<!-- Table Headings -->
 			<thead>
 			<a href="{{ url('/admin') }}">Admin Home Page         </a>
+				<a>  |  </a>
 			<a href="{{ url('/author/create') }}">Add New Author</a>
 			<br>
 				<tr>

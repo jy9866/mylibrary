@@ -34,7 +34,7 @@
 				{!! Form::label('book-category','Category',['class' => 'control-label col-sm-3',]) !!}
 				<div class="col-sm-9">
 					@foreach(Common::$categorys as $key => $val)
-					{!! Form::radio('category',$key) !!} {{$val}}
+					{!! Form::radio('category',$key) !!} {{$val}}<br>
 					@endforeach
 				<p>{{ $errors->getBag('default')->first('category') }}</p>
 				</div>

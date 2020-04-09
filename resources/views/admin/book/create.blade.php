@@ -32,24 +32,22 @@ use App\Common;
 				{!! Form::label('book-category','Category',['class' => 'control-label col-sm-3',]) !!}
 				<div class="col-sm-9">
 					@foreach(Common::$categorys as $key => $val)
-					{!! Form::radio('category',$key) !!} {{$val}}
+					{!! Form::radio('category',$key) !!} {{$val}}<br>
 					@endforeach
 				<p>{{ $errors->getBag('default')->first('category') }}</p>
 				</div>
 			</div>
 			<br></br>
-			<div class="form-group_row">
+			<div class="form-group row">
 				{!! Form::label('book-status','Status',['class' => 'control-label col-sm-3',]) !!}
 				<div class="col-sm-9">
-					{!! Form::text('status',null,[
-						'id'		=> 'book-status',
-						'class'		=> 'form-control',
-						'maxlength' => 6,
-					]) !!}
-					<p>{{ $errors->getBag('default')->first('status') }}</p>
+					@foreach(Common::$status as $key => $val)
+					{!! Form::radio('status',$key) !!} {{$val}}<br>
+					@endforeach
+				<p>{{ $errors->getBag('default')->first('status') }}</p>
 				</div>
 			</div>
-			<br>
+			<br></br>
 			<div class="form-group_row">
 				{!! Form::label('book-edition','edition',['class' => 'control-label col-sm-3',]) !!}
 				<div class="col-sm-9">

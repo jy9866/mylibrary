@@ -14,8 +14,9 @@ use App\Common;
 					style="border-collapse:collapse;font-family:Arial;">
 			<!-- Table Headings -->
 			<thead>
-			<a href="{{ url('/admin') }}">Admin Home Page         </a>
-			<a href="{{ url('/book/create') }}">Add New Book</a>
+			<a href="{{ url('/admin') }}">Admin Home Page  </a>
+			<a>  |  </a>
+			<a href="{{ url('/book/create') }}"> Add New Book</a>
 			<br>
 				<tr>
 				 <th>No.</th>
