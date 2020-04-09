@@ -54,19 +54,23 @@ class BookController extends Controller
 
 	  public function create()
 	  {
-        $book = new Book();
-
-       return view('/admin/book/create', ['book' => $book,]);
+		$book = new Book();
+		$authors = Author::pluck('name','id');
+		return view('/admin/book/create', [
+			'book' => $book,
+			'authors' => $authors,
+			]);
+      // return view('/admin/book/create', ['book' => $book,]);
       }
 
 
 	  public function store(Request $request)
     {
         //
-        $author = new Book();
-        $author->fill($request->all());
-        $author->save();
-
+        $book = new Book();
+        $book->fill($request->all());
+        $book->save();
+		$book->authors()->sync($request->input('author_id'));
             return redirect()->route('book.index');
     }
 
