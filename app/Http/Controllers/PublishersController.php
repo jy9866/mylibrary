@@ -26,7 +26,7 @@ class PublishersController extends Controller
   public function store(Request $request)
   {
     $request->validate([
-			'name' => 'required|max:30',
+			'name' => 'required|max:255',
 			'address' => 'required|max:200',
 			'email'=> "required|string|email|max:255",
 			]);
@@ -67,7 +67,7 @@ class PublishersController extends Controller
   public function update(Request $request, $id)
   {
     $request->validate([
-			'name' => 'required|max:30',
+			'name' => 'required|max:255',
 			'address' => 'required|max:200',
 			'email'=> "required|string|email|max:255",
 			]);

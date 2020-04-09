@@ -30,7 +30,7 @@ class AuthorController extends Controller
   public function store(Request $request)
   {
     $request->validate([
-			'name' => 'required|max:30',
+			'name' => 'required|max:255',
 			]);
 		$author = new Author();
 		$author->fill($request->all());
@@ -69,7 +69,7 @@ class AuthorController extends Controller
   public function update(Request $request, $id)
   {
     $request->validate([
-			'name' => 'required|max:30',
+			'name' => 'required|max:255',
 			]);
 
       $author = Author::find($id);
