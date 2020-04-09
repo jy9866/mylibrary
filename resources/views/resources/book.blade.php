@@ -56,7 +56,7 @@ h2.a{
 <div id="tabContent" style="background-color:#E6E6FA;">
 @foreach($getTenantsByCategory1 as $tenant)
 <div class="gallery">
-     <img src="data:image/jpeg;base64,<?php echo base64_encode( $tenant -> image ); ?>" style="width="600";height="400""/ >
+     <img src= "<?php echo $tenant['image']; ?>" style="width="600";height="400""/ >
   </a>
   <div class="desc">
     {!! link_to_route(
@@ -77,7 +77,7 @@ h2.a{
 <div id="tabContent" style="background-color:#E6E6FA;">
 @foreach($getTenantsByCategory2 as $tenant)
 <div class="gallery">
-     <img src="data:image/jpeg;base64,<?php echo base64_encode( $tenant -> image ); ?>" style="width="600";height="400""/ >
+     <img src= "<?php echo $tenant['image']; ?>" style="width="600";height="400""/ >
   </a>
   <div class="desc">
     {!! link_to_route(
@@ -98,7 +98,7 @@ h2.a{
 <div id="tabContent" style="background-color:#E6E6FA;">
 @foreach($getTenantsByCategory3 as $tenant)
 <div class="gallery">
-     <img src="data:image/jpeg;base64,<?php echo base64_encode( $tenant -> image ); ?>" style="width="600";height="400""/ >
+     <img src= "<?php echo $tenant['image']; ?>" style="width="600";height="400""/ >
   </a>
   <div class="desc">
     {!! link_to_route(
@@ -119,7 +119,7 @@ h2.a{
 <div id="tabContent" style="background-color:#E6E6FA;">
 @foreach($getTenantsByCategory4 as $tenant)
 <div class="gallery">
-     <img src="data:image/jpeg;base64,<?php echo base64_encode( $tenant -> image ); ?>" style="width="600";height="400""/ >
+     <img src= "<?php echo $tenant['image']; ?>" style="width="600";height="400""/ >
   </a>
   <div class="desc">
     {!! link_to_route(
@@ -140,7 +140,7 @@ h2.a{
 <div id="tabContent" style="background-color:#E6E6FA;">
 @foreach($getTenantsByCategory5 as $tenant)
 <div class="gallery">
-     <img src="data:image/jpeg;base64,<?php echo base64_encode( $tenant -> image ); ?>" style="width="600";height="400""/ >
+     <img src= "<?php echo $tenant['image']; ?>" style="width="600";height="400""/ >
   </a>
   <div class="desc">
     {!! link_to_route(
@@ -161,7 +161,7 @@ h2.a{
 <div id="tabContent" style="background-color:#E6E6FA;">
 @foreach($getTenantsByCategory6 as $tenant)
 <div class="gallery">
-     <img src="data:image/jpeg;base64,<?php echo base64_encode( $tenant -> image ); ?>" style="width="600";height="400""/ >
+     <img src= "<?php echo $tenant['image']; ?>"style="width="600";height="400""/ >
   </a>
   <div class="desc">
     {!! link_to_route(
@@ -182,7 +182,7 @@ h2.a{
 <div id="tabContent" style="background-color:#E6E6FA;">
 @foreach($getTenantsByCategory7 as $tenant)
 <div class="gallery">
-     <img src="data:image/jpeg;base64,<?php echo base64_encode( $tenant -> image ); ?>" style="width="600";height="400""/ >
+     <img src= "<?php echo $tenant['image']; ?>" style="width="600";height="400""/ >
   </a>
   <div class="desc">
     {!! link_to_route(
@@ -204,7 +204,7 @@ h2.a{
 <div id="tabContent" style="background-color:#E6E6FA;">
 @foreach($getTenantsByCategory8 as $tenant)
 <div class="gallery">
-     <img src="data:image/jpeg;base64,<?php echo base64_encode( $tenant -> image ); ?>" style="width="600";height="400""/ >
+     <img src= "<?php echo $tenant['image']; ?>" style="width="600";height="400""/ >
   </a>
   <div class="desc">
     {!! link_to_route(
@@ -225,7 +225,7 @@ h2.a{
 <div id="tabContent" style="background-color:#E6E6FA;">
 @foreach($getTenantsByCategory9 as $tenant)
 <div class="gallery">
-     <img src="data:image/jpeg;base64,<?php echo base64_encode( $tenant -> image ); ?>" style="width="600";height="400""/ >
+     <img src= "<?php echo $tenant['image']; ?>" style="width="600";height="400""/ >
   </a>
   <div class="desc">
     {!! link_to_route(
@@ -246,7 +246,7 @@ h2.a{
 <div id="tabContent" style="background-color:#E6E6FA;">
 @foreach($getTenantsByCategory10 as $tenant)
 <div class="gallery">
-     <img src="data:image/jpeg;base64,<?php echo base64_encode( $tenant -> image ); ?>" style="width="600";height="400"">
+     <img src= "<?php echo $tenant['image']; ?>" style="width="600";height="400"">
   </a>
   <div class="desc">
     {!! link_to_route(

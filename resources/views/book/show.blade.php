@@ -44,7 +44,7 @@ p.a{
 </div>
 <div class="row">
   <div class="column">
-    <img src="data:image/jpeg;base64,<?php echo base64_encode( $book -> image ); ?>" style="width:60% ;height:auto" >
+    <img src="<?php echo $book['image']; ?>" style="width:60% ;height:auto" >
     <br></br>
   </div>
   <div class="column" style="border-left-style: solid">

@@ -30,6 +30,17 @@
 			<p>{{ $errors->getBag('default')->first('name') }}</p>
 			</div>
       <br></br>
+      <div class="form-group_row">
+				{!! Form::label('book-image','Image',['class' => 'control-label col-sm-3',]) !!}
+				<div class="col-sm-9">
+					{!! Form::text('image',null,[
+						'id'		=> 'book-image',
+						'class'		=> 'form-control',
+						'maxlength' => 1000,
+					]) !!}
+				<p>{{ $errors->getBag('default')->first('image') }}</p>
+				</div>
+			</div>
 			<div class="form-group row">
 				{!! Form::label('book-category','Category',['class' => 'control-label col-sm-3',]) !!}
 				<div class="col-sm-9">

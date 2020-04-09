@@ -14,19 +14,40 @@ use App\Common;
 	<button><a href="{{ url('/bookindex') }}">Return to Book List</a></button>
 		{!! Form::model($book,['route' => ['book.store'],
 								 'class' => 'form-horizontal']) !!}
-
 			<div class="form-group_row">
-				{!! Form::label('book-title','Title',['class' => 'control-label col-sm-3',]) !!}
+			{!! Form::label('book-title','Title',['class' => 'control-label col-sm-3',]) !!}
+			<div class="col-sm-9">
+			{!! Form::text('title',null,[
+							'id'		=> 'book-title',
+							'class'		=> 'form-control',
+							'maxlength' => 30,
+				]) !!}
+			<p>{{ $errors->getBag('default')->first('title') }}</p>
+			</div>
+			</div>
+		  <br>
+			<div class="form-group_row">
+				{!! Form::label('book-image','Image',['class' => 'control-label col-sm-3',]) !!}
 				<div class="col-sm-9">
-					{!! Form::text('title',null,[
-						'id'		=> 'book-title',
+					{!! Form::text('image',null,[
+						'id'		=> 'book-image',
 						'class'		=> 'form-control',
 						'maxlength' => 30,
 					]) !!}
-				<p>{{ $errors->getBag('default')->first('title') }}</p>
+				<p>{{ $errors->getBag('default')->first('image') }}</p>
 				</div>
 			</div>
 			<br>
+			<div class="form-group row">
+				{!! Form::label('book-category','Category',['class' => 'control-label col-sm-3',]) !!}
+				<div class="col-sm-9">
+					@foreach(Common::$categorys as $key => $val)
+					{!! Form::radio('category',$key) !!} {{$val}}<br>
+					@endforeach
+				<p>{{ $errors->getBag('default')->first('category') }}</p>
+				</div>
+			</div>
+			<br></br>
       <!-- Category -->
 			<div class="form-group row">
 				{!! Form::label('book-category','Category',['class' => 'control-label col-sm-3',]) !!}
