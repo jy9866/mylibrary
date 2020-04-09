@@ -28,8 +28,11 @@ use App\Common;
 			</div>
 		  <br>
 			<div class="form-group_row">
+				{!! Form::label('book-image','Image',['class' => 'control-label col-sm-3',]) !!}
+				<div class="col-sm-0">
 			{!! Form::file('image') !!}
 			</div>
+		</div>
 			<br>
 			<div class="form-group row">
 				{!! Form::label('book-category','Category',['class' => 'control-label col-sm-3',]) !!}
@@ -91,7 +94,7 @@ use App\Common;
 					{!! Form::label('book-publisher_id','Publisher Id',['class' => 'control-label col-sm-3',]) !!}
 					<div class="col-sm-9">
 						{!! Form::text('publisher_id',null,[
-							'id'		=> 'book-status',
+							'id'		=> 'book-publisher_id',
 							'class'		=> 'form-control',
 							'maxlength' => 2,
 						]) !!}
