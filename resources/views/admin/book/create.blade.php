@@ -32,7 +32,7 @@ use App\Common;
 					{!! Form::text('image',null,[
 						'id'		=> 'book-image',
 						'class'		=> 'form-control',
-						'maxlength' => 30,
+						'maxlength' => 255,
 					]) !!}
 				<p>{{ $errors->getBag('default')->first('image') }}</p>
 				</div>

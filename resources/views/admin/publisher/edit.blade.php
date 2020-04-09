@@ -24,7 +24,7 @@
 					{!! Form::text('name',null,[
 						'id'		=> 'publisher-name',
 						'class'		=> 'form-control',
-						'maxlength' => 30,
+						'maxlength' => 255,
 					]) !!}
 				</div>
 			<p>{{ $errors->getBag('default')->first('name') }}</p>
@@ -37,7 +37,7 @@
 					{!! Form::text('address',null,[
 						'id'		=> 'publisher-address',
 						'class'		=> 'form-control',
-						'maxlength' => 200,
+						'maxlength' => 255,
 					]) !!}
 				</div>
 			<p>{{ $errors->getBag('default')->first('address') }}</p>
@@ -50,7 +50,7 @@
           {!! Form::text('email',null,[
             'id'		=> 'publisher-email',
             'class'		=> 'form-control',
-            'maxlength' => 200,
+            'maxlength' => 255,
           ]) !!}
 				<p>{{ $errors->getBag('default')->first('email') }}</p>
 
