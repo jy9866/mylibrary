@@ -40,18 +40,16 @@
 				</div>
 			</div>
 			<br></br>
-      <div class="form-group_row">
-        {!! Form::label('book-status','Status',['class' => 'control-label col-sm-3',]) !!}
-        <div class="col-sm-9">
-          {!! Form::text('Status',null,[
-            'id'		=> 'book-status',
-            'class'		=> 'form-control',
-            'maxlength' => 10,
-          ]) !!}
-        </div>
-      <p>{{ $errors->getBag('default')->first('status') }}</p>
-      </div>
-      <br></br>
+      <div class="form-group row">
+				{!! Form::label('book-status','Status',['class' => 'control-label col-sm-3',]) !!}
+				<div class="col-sm-9">
+					@foreach(Common::$status as $key => $val)
+					{!! Form::radio('status',$key) !!} {{$val}}<br>
+					@endforeach
+				<p>{{ $errors->getBag('default')->first('status') }}</p>
+				</div>
+			</div>
+			<br></br>
       <div class="form-group_row">
         {!! Form::label('book-edition','edition',['class' => 'control-label col-sm-3',]) !!}
         <div class="col-sm-9">

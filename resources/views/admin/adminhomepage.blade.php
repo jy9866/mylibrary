@@ -28,7 +28,7 @@ use App\Common;
   <h>Please select one table:</h>
 <br></br>
 <button type="button" onclick="window.location='{{ url("/bookindex") }}'">Book</button>
-<button type="button" onclick="window.location='{{ url("/publisherindex") }}'">Publsiher</button>
+<button type="button" onclick="window.location='{{ url("/publisherindex") }}'">Publisher</button>
 <button type="button" onclick="window.location='{{ url("/authorindex") }}'">Author</button>
 </div>
 <div>

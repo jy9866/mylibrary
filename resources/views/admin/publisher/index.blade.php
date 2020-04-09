@@ -91,7 +91,7 @@ use App\Common;
 
 		@else
 		<div>
-			<a href="{{ url('/tenant/create') }}">Add New Tenant</a>
+			<a href="{{ url('/publisher/create') }}">Add New Tenant</a>
 			<br><br>
 			 No records found
 		 </div>
