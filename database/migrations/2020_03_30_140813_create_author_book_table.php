@@ -23,9 +23,6 @@ class CreateAuthorBookTable extends Migration
         });
     }
 
-
-
-
     /**
      * Reverse the migrations.
      *
@@ -33,6 +30,6 @@ class CreateAuthorBookTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('=author_book');
+        Schema::dropIfExists('author_book');
     }
 }

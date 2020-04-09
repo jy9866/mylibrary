@@ -14,7 +14,6 @@ class CreateBooksTable extends Migration
      public function up()
      {
          Schema::enableForeignKeyConstraints();
-
          Schema::create('books', function (Blueprint $table) {
              $table->engine='InnoDB';
              $table->increments('id');
@@ -33,13 +32,8 @@ class CreateBooksTable extends Migration
                    ->references('id')->on('authors');
              $table->foreign('publisher_id')
                    ->references('id')->on('publishers');
-
          });
       }
-
-      //Insert
-      //DB::table('books')->insert(['image'=>'','title'=>'Indian and World Geography', 'category'=>'Geography and History', 'status'=>'available', 'edition'=>'4', 'year'=>'2017']);
-
       public function down()
       {
           Schema::dropIfExists('books');

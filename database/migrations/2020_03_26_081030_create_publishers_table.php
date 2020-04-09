@@ -14,8 +14,6 @@ class CreatePublishersTable extends Migration
     public function up()
     {
         Schema::enableForeignKeyConstraints();
-
-
         Schema::create('publishers', function (Blueprint $table) {
             $table->engine='InnoDB';
             $table->increments('id');
@@ -25,11 +23,7 @@ class CreatePublishersTable extends Migration
             $table->timestamps();
 
         });
-
-
-
     }
-
     /**
      * Reverse the migrations.
      *
