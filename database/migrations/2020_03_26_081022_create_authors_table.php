@@ -19,12 +19,12 @@ class CreateAuthorsTable extends Migration
             $table->engine='InnoDB';
             $table->increments('id');
             $table->string('name', 150);
-            $table->timestamps();
+            $table->timestamps('created_at');
+            $table->timestamps('updated_at');
         });
 
     }
-    //Insert
-    //  DB::table('authors')->insert(['name'=>'Majid Husain']);
+    
     /**
      * Reverse the migrations.
      *
