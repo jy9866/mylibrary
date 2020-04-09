@@ -10,7 +10,7 @@
 	 <!-- Bootstrap Boilerplate... -->
 
 	 <div class="panel-body">
-	 <button><a href="{{ url("/authorindex") }}">Return to Author List</a></button>
+	 <button><a href="{{ url('/authorindex') }}">Return to Author List</a></button>
 		 <!-- New Division Form -->
 			 {!! Form::model($author, [
 			 'route' => ['author.update', $author->id],
@@ -31,7 +31,7 @@
 			</div>
       <br></br>
       <br></br>
-			
+
 
 			 <!-- Submit Button -->
 			<div class="form-group_row">
