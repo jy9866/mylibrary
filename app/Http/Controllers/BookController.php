@@ -68,9 +68,20 @@ class BookController extends Controller
     {
         //
         $book = new Book();
-        $book->fill($request->all());
+		$book->fill($request->except('image'));
+		
+		if($request->hasFile('image')) {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();//getting image extension
+            $filename = time().'.'.$extension;
+            $file->move('uploads/books/',$filename);
+            $book->image = $filename;
+        }
+        else{
+            $book->fill(['image'=>'']);
+        }
         $book->save();
-		$book->authors()->sync($request->input('author_id'));
+		$book->authors()->sync($request->get('authors'));
             return redirect()->route('book.index');
     }
 

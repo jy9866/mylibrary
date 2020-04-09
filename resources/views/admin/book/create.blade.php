@@ -13,7 +13,8 @@ use App\Common;
 	<div class="panel-body" style="font-size:20px;">
 	<button><a href="{{ url('/bookindex') }}">Return to Book List</a></button>
 		{!! Form::model($book,['route' => ['book.store'],
-								 'class' => 'form-horizontal']) !!}
+								 'class' => 'form-horizontal',
+								 'files'=>true]) !!}
 			<div class="form-group_row">
 			{!! Form::label('book-title','Title',['class' => 'control-label col-sm-3',]) !!}
 			<div class="col-sm-9">
@@ -27,15 +28,7 @@ use App\Common;
 			</div>
 		  <br>
 			<div class="form-group_row">
-				{!! Form::label('book-image','Image',['class' => 'control-label col-sm-3',]) !!}
-				<div class="col-sm-9">
-					{!! Form::text('image',null,[
-						'id'		=> 'book-image',
-						'class'		=> 'form-control',
-						'maxlength' => 10000,
-					]) !!}
-				<p>{{ $errors->getBag('default')->first('image') }}</p>
-				</div>
+			{!! Form::file('image') !!}
 			</div>
 			<br>
 			<div class="form-group row">
@@ -59,7 +52,7 @@ use App\Common;
 			</div>
 			<br></br>
 			<div class="form-group_row">
-				{!! Form::label('book-edition','edition',['class' => 'control-label col-sm-3',]) !!}
+				{!! Form::label('book-edition','Edition',['class' => 'control-label col-sm-3',]) !!}
 				<div class="col-sm-9">
 					{!! Form::text('edition',null,[
 						'id'		=> 'book-edition',
@@ -82,16 +75,16 @@ use App\Common;
         </div>
       </div>
       <br>
-			<div class="form-group_row">
-				{!! Form::label('book-author_id','Author Id',['class' => 'control-label col-sm-3',]) !!}
-				<div class="col-sm-9">
-					{!! Form::text('author_id',null,[
-						'id'		=> 'book-status',
-						'class'		=> 'form-control',
-						'maxlength' => 2,
-					]) !!}
-					<p>{{ $errors->getBag('default')->first('author_id') }}</p>
-				</div>
+	  			<div class="form-group row">
+					{!! Form::label('authors-name','Authors',['class' => 'control-label col-sm-3',]) !!}
+					<br>
+					<div class="col-sm-9">
+						{!! Form::select('authors[]',
+							$authors,
+							null,
+							['class' => 'form-control',
+							'multiple' => 'multiple']) !!}
+					</div>
 				</div>
 				<br></br>
 				<div class="form-group_row">
