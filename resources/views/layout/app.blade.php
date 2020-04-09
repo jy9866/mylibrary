@@ -32,9 +32,9 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand">
-                        Web Library
-                    </a>
+										<a class="navbar-brand" href="{{ url('/') }}">
+                         Web Library
+                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">

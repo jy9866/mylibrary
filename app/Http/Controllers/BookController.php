@@ -63,13 +63,11 @@ class BookController extends Controller
 	  public function store(Request $request)
     {
         //
-		$book = new Book;
-		$book->fill($request->all());
-		$book->save();
+        $author = new Book();
+        $author->fill($request->all());
+        $author->save();
 
-		$book->authors()->sync($request->get('authors'));
-
-		return redirect()->route('/bookindex');
+            return redirect()->route('book.index');
     }
 
       public function show($id)
@@ -87,39 +85,20 @@ class BookController extends Controller
     ]);
 	}
 
-	public function edit($id)
-    {
-        //
-		$book = Book::find($id);
-		if(!$book) throw new ModelNotFoundException;
-
-		$author = Author::pluck('name','id');
-
-		return view('/book/edit', [
-		'book' => $book,
-		'author' => $author,
-		]);
-	}
-
 	public function update(Request $request, $id)
     {
-        //
-		$book = Book::find($id);
-		if(!$book) throw new ModelNotFoundException;
+          $book = Book::find($id);
+            if(!$book) throw new ModelNotFoundException;
 
-		$book->fill($request->all());
+             $book->fill($request->all());
+             $book->save();
 
-        $book->saveOrFail();
-
-		$book->authors()->sync($request->input('author'));
-
-
-		return redirect()->route('/bookindex');
+             return redirect()->route('book.index');
 	}
-	
+
 	public function destroy($id){
 		$book = Book::find($id);
-        $book->delete(); 
+        $book->delete();
 		return redirect()->route('book.index')->with(['message'=> 'Books Successfully deleted!!']);
 
 	}
@@ -131,5 +110,12 @@ class BookController extends Controller
 	  return view('/admin/book/index',['books' => $books]);
     	//}
 		//return redirect('/');
+	}
+
+  public function edit($id){
+		$book = Book::find($id);
+		if(!$book) throw new ModelNotFoundException;
+
+		return view('/admin/book/edit', ['book'=> $book]);
 	}
 }

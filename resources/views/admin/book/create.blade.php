@@ -39,6 +39,18 @@ use App\Common;
 			</div>
 			<br></br>
 			<div class="form-group_row">
+				{!! Form::label('book-status','Status',['class' => 'control-label col-sm-3',]) !!}
+				<div class="col-sm-9">
+					{!! Form::text('status',null,[
+						'id'		=> 'book-status',
+						'class'		=> 'form-control',
+						'maxlength' => 6,
+					]) !!}
+					<p>{{ $errors->getBag('default')->first('status') }}</p>
+				</div>
+			</div>
+			<br>
+			<div class="form-group_row">
 				{!! Form::label('book-edition','edition',['class' => 'control-label col-sm-3',]) !!}
 				<div class="col-sm-9">
 					{!! Form::text('edition',null,[
@@ -56,13 +68,36 @@ use App\Common;
           {!! Form::text('year',null,[
             'id'		=> 'book-year',
             'class'		=> 'form-control',
-            'maxlength' => 6,
+            'maxlength' => 5,
           ]) !!}
           <p>{{ $errors->getBag('default')->first('year') }}</p>
         </div>
       </div>
       <br>
-
+			<div class="form-group_row">
+				{!! Form::label('book-author_id','Author Id',['class' => 'control-label col-sm-3',]) !!}
+				<div class="col-sm-9">
+					{!! Form::text('author_id',null,[
+						'id'		=> 'book-status',
+						'class'		=> 'form-control',
+						'maxlength' => 2,
+					]) !!}
+					<p>{{ $errors->getBag('default')->first('author_id') }}</p>
+				</div>
+				</div>
+				<br></br>
+				<div class="form-group_row">
+					{!! Form::label('book-publisher_id','Publisher Id',['class' => 'control-label col-sm-3',]) !!}
+					<div class="col-sm-9">
+						{!! Form::text('publisher_id',null,[
+							'id'		=> 'book-status',
+							'class'		=> 'form-control',
+							'maxlength' => 2,
+						]) !!}
+						<p>{{ $errors->getBag('default')->first('publisher_id') }}</p>
+					</div>
+					</div>
+					<br></br>
 			<!-- Submit Button -->
 			<div class="form-group_row">
 				<div class="col-sm-offset-3 col-sm-6">
